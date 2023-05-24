@@ -84,8 +84,13 @@ class App extends React.Component {
       const objectsToAdd = event.target.value - currentNumberOfObjects;
   
       if (objectsToAdd <= 0) {
-        // No need to add objects, return the current state
-        return null;
+        // Remove excess objects
+        const updatedIntervalData = Object.fromEntries(
+          Object.entries(prevState.intervalData)
+            .slice(0, event.target.value)
+        );
+    
+        return { intervalData: updatedIntervalData };
       }
   
       const newObjects = Array.from({ length: objectsToAdd }, (_, index) => {
@@ -114,19 +119,24 @@ class App extends React.Component {
           </ul>
         </nav>
         <main className="main-content">
-        <label htmlFor="linhasInput">Linhas:</label>
-        <input
-          type="number"
-          id="linhasInput"
-          name="linhas"
-          pattern="[0-9]*"
-          inputMode="numeric"
-          min="0"
-          onChange={this.handleNumberOfLinesChange}
-          defaultValue="10"
-        />
+          <div className="linhasControl">
+            <label id="linhasLabel" htmlFor="linhasInput">Linhas:</label>
+            <input
+              type="number"
+              id="linhasInput"
+              name="linhas"
+              pattern="[0-9]*"
+              inputMode="numeric"
+              min="0"
+              onChange={this.handleNumberOfLinesChange}
+              defaultValue="10"
+            />
+          </div>
+          <div className="totalTasks">
+            Máximo de Atividades possível: {this.state.result.length}
+          </div>
           <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-            <button onClick={()=> console.log(this.state)}>DEBUG</button>
+            {/* <button onClick={()=> console.log(this.state)}>DEBUG</button> */}
             <MyGrid 
               numberOfLines={this.state.numberOfLines}
               intervalData={this.state.intervalData}
