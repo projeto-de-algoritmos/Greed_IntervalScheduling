@@ -1,0 +1,11 @@
+.plaid {
+    width: 1800px;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    background-image:
+      linear-gradient(to right, black 1px, transparent 1px),
+      linear-gradient(to bottom, black 1px, transparent 1px);
+    background-size: 120px 100%, 100% 80px;
+    background-position: -1px -1px;
+  }
+  

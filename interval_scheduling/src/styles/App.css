@@ -1,0 +1,35 @@
+.app {
+    text-align: center;
+}
+  
+.navbar {
+background-color: #333;
+color: #fff;
+padding: 10px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.navbar__logo {
+font-size: 20px;
+font-weight: bold;
+}
+
+.navbar__links {
+list-style-type: none;
+display: flex;
+}
+
+.navbar__links li {
+margin-right: 10px;
+}
+
+.navbar__links a {
+color: #fff;
+text-decoration: none;
+}
+
+.main-content {
+margin: 20px;
+}
