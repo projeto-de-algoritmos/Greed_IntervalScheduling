@@ -21,9 +21,7 @@ O projeto a seguir é uma demonstração interativa e gráfica da utilização d
 
 ## Apresentação
 
-<video width="320" height="240" controls>
-  <source src="./assets/apresentacao.mp4" type="video/mp4">
-</video>
+A apresentação pode ser encontrada no arquivo assets/apresentacao.mp4
 
 ## Instalação 
 **Linguagem**: Javascript
